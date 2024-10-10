@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Requests Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Meeting Requests</h1>
+    <form id="meetingForm">
+        <input type="text" id="title" placeholder="Request Title" required>
+        <input type="text" id="agenda" placeholder="Agenda" required>
+        <input type="datetime-local" id="datetime" required>
+        <button type="submit">Post Request</button>
+    </form>
+    <ul id="requestList"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
