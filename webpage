@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Meeting Board</h1>
+    <form id="meetingForm">
+        <input type="text" id="title" placeholder="Meeting Title" required>
+        <input type="text" id="agenda" placeholder="Agenda" required>
+        <button type="submit">Add Meeting</button>
+    </form>
+    <ul id="meetingList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+const form = document.getElementById('meetingForm');
+const meetingList = document.getElementById('meetingList');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const title = document.getElementById('title').value;
+    const agenda = document.getElementById('agenda').value;
+
+    const listItem = document.createElement('li');
+    listItem.textContent = `${title}: ${agenda}`;
+    
+    meetingList.appendChild(listItem);
+
+    form.reset();
+});
+
